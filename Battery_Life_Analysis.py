@@ -1,3 +1,6 @@
+# Imports 
+import numpy as np
+
 # Vars
 motorDrawMin = 0.52 # amps
 motorDrawMax = 20 # amps 
@@ -27,9 +30,9 @@ totalDrawmin = raspiCurrent + txCurrent + 6*motorDrawMin
 totalDrawmax = raspiCurrent + txCurrent + 6*motorDrawMax
 totalDrawavg = raspiCurrent + txCurrent + 6*motorDraw
 # Add second battery
-lifeMax = 2*capacity/totalDrawmin
-lifeMin = 2*capacity/totalDrawmax
-lifeAvg = 2*capacity/totalDrawavg
+lifeMax = np.round(2*capacity/totalDrawmin,2)
+lifeMin = np.round(2*capacity/totalDrawmax,2)
+lifeAvg = np.round(2*capacity/totalDrawavg,2)
 
 print(str(lifeMax) + ' hrs to ' + str(lifeMin) + ' hrs')
 print(str(lifeAvg) + ' hrs')
