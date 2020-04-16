@@ -30,9 +30,9 @@ totalDrawmin = raspiCurrent + txCurrent + 6*motorDrawMin
 totalDrawmax = raspiCurrent + txCurrent + 6*motorDrawMax
 totalDrawavg = raspiCurrent + txCurrent + 6*motorDraw
 # Add second battery
-lifeMax = np.round(2*capacity/totalDrawmin,2)
-lifeMin = np.round(2*capacity/totalDrawmax,2)
-lifeAvg = np.round(2*capacity/totalDrawavg,2)
+lifeMax = int(60*(2*capacity/totalDrawmin))
+lifeMin = int(60*(2*capacity/totalDrawmax))
+lifeAvg = int(60*(2*capacity/totalDrawavg))
 
-print(str(lifeMax) + ' hrs to ' + str(lifeMin) + ' hrs')
-print(str(lifeAvg) + ' hrs')
+print(str(lifeMax) + ' minutes to ' + str(lifeMin) + ' minutes')
+print(str(lifeAvg) + ' minutes')
