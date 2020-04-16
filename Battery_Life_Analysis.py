@@ -2,6 +2,14 @@
 motorDrawMin = 0.52 # amps
 motorDrawMax = 20 # amps 
 
+torqueAtMin = 0 # Oz-In
+torqueAtMax = 416.6 # Oz-In 
+
+# torqure needed for climbing 45 degrees 
+x = 75
+
+motorDraw = (motorDrawMax/torqueAtMax)*x + motorDrawMin
+
 # battery 
 capacity = 8 #Ah
 volts = 11.1 #volts 
