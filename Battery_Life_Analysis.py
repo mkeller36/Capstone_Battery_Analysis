@@ -26,8 +26,10 @@ txVotls = 12 #volts
 totalDrawmin = raspiCurrent + txCurrent + 6*motorDrawMin
 totalDrawmax = raspiCurrent + txCurrent + 6*motorDrawMax
 totalDrawavg = raspiCurrent + txCurrent + 6*motorDraw
-lifeMax = capacity/totalDrawmin
-lifeMin = capacity/totalDrawmax
-lifeAvg = capacity/totalDrawavg
+# Add second battery
+lifeMax = 2*capacity/totalDrawmin
+lifeMin = 2*capacity/totalDrawmax
+lifeAvg = 2*capacity/totalDrawavg
+
 print(str(lifeMax) + ' hrs to ' + str(lifeMin) + ' hrs')
 print(str(lifeAvg) + ' hrs')
