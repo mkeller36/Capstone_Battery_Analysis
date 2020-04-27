@@ -25,9 +25,13 @@ raspiVolts = 5 #volts
 txCurrent = .220 #A
 txVotls = 12 #volts
 
+# Swift 2 Camera
+camCurrent = 0.07 #A
+camVolts = 12 #volts 
+
 # Life 
-totalDrawmin = raspiCurrent + txCurrent + 6*motorDrawMin
-totalDrawmax = raspiCurrent + txCurrent + 6*motorDrawMax
+totalDrawmin = raspiCurrent + txCurrent + 6*motorDrawMin + camCurrent
+totalDrawmax = raspiCurrent + txCurrent + 6*motorDrawMax + camCurrent
 totalDrawavg = raspiCurrent + txCurrent + 6*motorDraw
 # Add second battery
 lifeMax = int(60*(2*capacity/totalDrawmin))
